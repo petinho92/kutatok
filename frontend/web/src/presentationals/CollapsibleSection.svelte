@@ -1,6 +1,5 @@
 <script>
     export let headerText;
-    export let headerTime;
     let expanded = false
 </script>
 
@@ -61,10 +60,10 @@
     }
     .contents{
         padding: 18px 18px;
-        background-color: #feca4d;
+        background-color: #f6e1ac;
     }
     .headercolor{
-        background-color: #eaa12a;
+        background-color: #feca4d;
         text-align: left;
     }
 </style>

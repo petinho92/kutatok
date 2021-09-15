@@ -1,7 +1,7 @@
 <script>
     import {cities} from '../application/dataStore/GetCities.ts';
     import {schools} from '../application/dataStore/GetSchools.ts';
-    import {shows} from 'src/application/dataStore/GetShows.ts';
+    import {eloadas, shows} from 'src/application/dataStore/GetShows.ts';
     import RegistrantsFormData from "src/application/formData/registrants.ts";
     import {Button} from 'svelma';
     import handleFetch from "src/application/services/handle-fetch.ts";
@@ -30,7 +30,6 @@
                 console.log('sikeres');
                 active = true;
             })
-
     }
 
 </script>
@@ -39,6 +38,7 @@
     <div class="tile is-parent">
         <div class="tile is-child box formcolor">
             <p class="title has-text-centered">Regisztráció</p>
+
             <div class="is-divider is-info" data-content="Személyes adatok"></div>
 
             <div class="field">
@@ -48,7 +48,6 @@
                     <span class="icon is-small is-left">
                         <i class="fas fa-user"></i>
                     </span>
-
                 </div>
             </div>
 
@@ -71,15 +70,14 @@
                             {#each cities as city}
                                 <option value={city.name}>{city.name}</option>
                             {/each}
-
                         </select>
                         <span class="icon is-small is-left">
                             <i class="fas fa-city"></i>
                         </span>
                     </div>
-
                 </div>
             </div>
+
             <div class="field">
                 <label class="label">Iskola<b class="has-text-danger">*</b></label>
                 <div class="control has-icons-left">
@@ -98,18 +96,34 @@
                     </div>
                 </div>
             </div>
+
             <div class="is-divider is-info" data-content="Programok"></div>
             <div class="field">
                 <label class="label">Az alábbi programok érdekelnek:</label>
             </div>
-            <div class="field mb-6">
+            <div class="field marginbottom">
                 {#each shows as show}
                     <br>
                     <label class="is-pulled-left"><input type="checkbox" bind:group={formData.programs}
                                                          value={show.id}/> {show.name}</label>
                 {/each}
+                <br>
             </div>
+            <div class="field">
+                <br>
+                <label class="label">Az alábbi előadások érdekelnek:</label>
+            </div>
+            <div class="field marginbottom">
+                {#each eloadas as ea}
+                    <br>
+                    <label class="is-pulled-left"><input type="checkbox" bind:group={formData.programs}
+                                                         value={ea.id}/> {ea.name}</label>
+                {/each}
+            </div>
+            <br>
+
             <div class="is-divider is-info" data-content="Adatvédelmi tájékoztató"></div>
+
             <div class="control">
                 <label class="checkbox">
                     <br><input type="checkbox" bind:checked={privacy}>
@@ -118,10 +132,10 @@
                         class="has-text-danger">*</b>
                 </label>
             </div>
-            <!--            <div class="buttons  mt-6 mb-6">-->
+
             <div class="columns is-centered mt-6">
                 <div class="buttons">
-                    <Button type="is-info"
+                    <Button type="is-warning"
                             outlined on:click={onRegister}
                             disabled={!privacy}>
                         Regisztráció
@@ -129,7 +143,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -144,15 +157,14 @@
 
 <style>
     .formcolor {
-        /*background-color: #feca4d;*/
         background-image: linear-gradient(#feca4d, #eaa12a);
         opacity: 1;
-
-        /*background-image: url("/~web/images/bgp.jpg");*/
     }
-
     .cont {
         margin-bottom: 45px;
+    }
+    .marginbottom{
+        margin-bottom: 30px;
     }
 
 </style>

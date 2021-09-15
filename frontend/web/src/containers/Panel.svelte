@@ -16,9 +16,9 @@
                     legfontosabb célja, hogy a kutatók és fejlesztők sokszínű munkája vonzóvá váljon a fiatalok számára
                     – fiúknak és lányoknak egyaránt. Az eseménysorozat kicsik és nagyok számára egyaránt izgalmas
                     programkínálattal várja az érdeklődőket</p>
-
             </div>
-            <p class="subtitle has-text-centered has-text-white mt-4">Kutatók Éjszakája története</p>
+
+            <p class="subtitle has-text-centered has-text-white mt-6">Kutatók Éjszakája története</p>
             <div class="has-text-justified has-text-white">
                 <p class="mb-2">A Kutatók Éjszakája (Researchers’ Night) az Európai Bizottság kezdeményezésére és
                     támogatásával
@@ -60,15 +60,16 @@
                     kalandokra.</p>
             </div>
 
-            <h3 class="sectoionheader">
+            <h3 class="sectoionheader mt-6">
                 Programok Szeptember 24. 16:00-22:00
             </h3>
             {#each shows as show}
                 <CollapsibleSection headerTime={show.time} headerText={show.name}>
                     <div class="content">
                         <p>Időpont: {show.time}<br>
-                        Helyszín: {show.place}</p><br>
-                        {show.description}
+                            Helyszín: {show.place}<br>
+                            Cím: {show.address} </p><br>
+                        <p class="has-text-justified">{show.description}</p>
                     </div>
                 </CollapsibleSection>
             {/each}
@@ -79,51 +80,12 @@
                 <CollapsibleSection headerTime={ea.time} headerText={ea.name}>
                     <div class="content">
                         <p>Időpont: {ea.time}<br>
-                            Helyszín: {ea.place}</p><br>
-                        {ea.description}
+                            Helyszín: {ea.place}<br>
+                            Cím: {ea.address} </p><br>
+                        <p class="has-text-justified">{ea.description}</p>
                     </div>
                 </CollapsibleSection>
             {/each}
-            <!--                        <div class="columns is-vcentered mt-6">-->
-            <!--                            <div class="column is-full-mobile">-->
-            <!--                                <section class="panel">-->
-            <!--                                    <p class="panel-heading has-text-centered orangecolor">Programok Szeptember 24. 16:00-22:00</p>-->
-            <!--                                    <div class="panel-block orangecolortable">-->
-            <!--                                        <table class="table table is-fullwidth">-->
-            <!--                                            <thead>-->
-            <!--                                            <tr style="background-color: white;">-->
-            <!--                                                <th>Időpont</th>-->
-            <!--                                                <th>Előadás</th>-->
-            <!--                                                <th>Helyszín</th>-->
-            <!--                                            </tr>-->
-            <!--                                            </thead>-->
-            <!--                                            <tbody>-->
-            <!--                                            <tr class="coldivider">-->
-            <!--                                                <td colspan="3" class="has-text-centered">Folyamatos programok</td>-->
-            <!--                                            </tr>-->
-            <!--                                            {#each shows as show}-->
-            <!--                                                <tr>-->
-            <!--                                                    <td>{show.time}</td>-->
-            <!--                                                    <td>{show.name}</td>-->
-            <!--                                                    <td>{show.place}</td>-->
-            <!--                                                </tr>-->
-            <!--                                            {/each}-->
-            <!--                                            <tr class="coldivider">-->
-            <!--                                                <td colspan="3" class="has-text-centered">Előadások</td>-->
-            <!--                                            </tr>-->
-            <!--                                            {#each eloadas as ea}-->
-            <!--                                                <tr>-->
-            <!--                                                    <td>{ea.time}</td>-->
-            <!--                                                    <td>{ea.name}</td>-->
-            <!--                                                    <td>{ea.place}</td>-->
-            <!--                                                </tr>-->
-            <!--                                            {/each}-->
-            <!--                                            </tbody>-->
-            <!--                                        </table>-->
-            <!--                                    </div>-->
-            <!--                                </section>-->
-            <!--                            </div>-->
-            <!--                        </div>-->
         </div>
     </div>
 </div>
@@ -133,7 +95,7 @@
         background-image: url("/~web/images/bgp1.jpg");
     }
     .sectoionheader{
-        background-color: #e83d3f;
+        background-color: #eaa12a;
         padding: 15px;
         text-align: center;
     }

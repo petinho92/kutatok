@@ -15,6 +15,7 @@ use Symfony\Component\Validator\Constraints\NotNull;
 #[Validator('email', NotBlank::class, ['message' => 'Email cím megadása kötelező!'])]
 #[Validator(null, UniqueEntity::class, ['fields' => ['email']])]
 #[Validator('email', Email::class, ['message' => 'Email cím nem megfelelő!'])]
+#[Validator('programs', NotBlank::class, ['message'=>'Program választásaa kötelező!'])]
 #[Created]
 #[Modelify(\Application\Database\DefaultConnection::class, 'registrants', true)]
 class Registrants extends _Registrants{
