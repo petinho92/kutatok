@@ -5,7 +5,7 @@ use Atomino\Mercury\Responder\Smart\Attributes\{Cache, Args, CSS, JS, Init};
 use Symfony\Component\HttpFoundation\Response;
 use function Atomino\debug;
 
-#[Init( 'web', 'index.twig', 'mobile.twig' )]
+#[Init( 'web', 'index.twig' )]
 #[Args( title: 'PTE MIK - Kutatók Éjszakája',favicon: '/~web/images/mik_favico.png' )]
 #[Cache( 0 )]
 #[JS('/~web/index.js')]
