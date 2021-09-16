@@ -100,6 +100,15 @@ export let shows = [
     },
     {
         id: 12,
+        name: "Ipari termék-és formatervező hallgatók munkáinkat kiállítása",
+        type: "active",
+        time: "16:00-22:00",
+        address: "7624 Pécs, Boszorkány út 2.",
+        place: "Aula",
+        description: "A különböző installációk megtekintése mellett az érdeklődők a MIK által örökbefogadott mosómedve (MiMIKe) síkból térbe való megformálására is külön programot kínál, mely kedves emlékként szolgál az idei PTE MIK Kutatók Éjszakája programsorozatból."
+    },
+    {
+        id: 13,
         name: "Tér-érzék",
         type: "active",
         time: "egész este folyamatosan",
@@ -111,7 +120,7 @@ export let shows = [
 
 export let eloadas = [
     {
-        id: 13,
+        id: 14,
         name: "Megoldás a klímaváltozásra",
         type: "eloadas",
         time: "17:00",
@@ -120,7 +129,7 @@ export let eloadas = [
         description: "A klímaváltozás az emberiség történelmének legnagyobb problémája. Az előadás kitér arra, hogy miért ekkor a gond és hogy mi lehet ebből a kiút. A megoldás rendszert \"az egyensúly 6 programja\" névvel elnevezett rendszer adja meg, mely bemutatásra kerül."
     },
     {
-        id: 14,
+        id: 15,
         name: "Mi az a Bitcoin?",
         type: "eloadas",
         time: "16:00-17:00",
@@ -129,7 +138,7 @@ export let eloadas = [
         description: "Az előadás során fokozatosan építjük fel, hogy mi az Bitcoin és hogyan működik. Egyszerű pénzügyi koncepcióktól indulunk, hogy eljussunk a bonyolultabb újdonságok felé, amiket ma már bankok is terveznek bevezetni. Az előadás megértése nem igényel matematikai vagy informatikai ismereteket."
     },
     {
-        id: 15,
+        id: 16,
         name: "Környezetpozitív építészet - Solar Decathlon 2021",
         type: "eloadas",
         time: "18:00-19:00",
@@ -138,7 +147,7 @@ export let eloadas = [
         description: "Napjaink környezeti fenntarthatóságának biztosításában egyaránt nagy szerepe van az épületek tervezőinek és használóinak.\r\nA károsanyag kibocsájtásért felelős tényezők közül az építőipar közel 40%-ban felelős.\r\nAz előadás célja egy nemzetközi projekten keresztül bemutatni, hogy miképpen tud egy épület pozitív zöld energiamérleggel és közel karbonsemleges működéssel egészséges életteret nyújtani az emberek számára.\r\nMindeközben szem előtt tartva a tudatos és magas minőségben működő társadalmi közösségek érdekeit."
     },
     {
-        id: 16,
+        id: 17,
         name: "Fókusz alapú térérzékelés",
         type: "eloadas",
         time: "16:00-16:30",

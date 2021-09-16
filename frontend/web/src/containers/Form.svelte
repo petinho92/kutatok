@@ -109,7 +109,7 @@
                 <br>
             </div>
             <div class="field">
-                <br>
+                <br class="is-mobile mt-6">
                 <label class="label">Az alábbi előadások érdekelnek:<b class="has-text-danger">*</b></label>
             </div>
             <div class="field marginbottom">
