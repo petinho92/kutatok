@@ -153,6 +153,6 @@ export let eloadas = [
         time: "16:00-16:30",
         address: "7624 Pécs, Boszorkány út 2.",
         place: "A216",
-        description: "Napjaink környezeti fenntarthatóságának biztosításában egyaránt nagy szerepe van az épületek tervezőinek és használóinak.\r\nA károsanyag kibocsájtásért felelős tényezők közül az építőipar közel 40%-ban felelős.\r\nAz előadás célja egy nemzetközi projekten keresztül bemutatni, hogy miképpen tud egy épület pozitív zöld energiamérleggel és közel karbonsemleges működéssel egészséges életteret nyújtani az emberek számára.\r\nMindeközben szem előtt tartva a tudatos és magas minőségben működő társadalmi közösségek érdekeit."
+        description: "Manapság sok érdekes szenzorral valósítható meg a tárgyak háromdimenziós érzékelése. De hogy működhet ez pusztán egyetlen kamera felhasználásával? Hogy tudjuk az emberi látás mechanizmusait leutánozni és felhasználni a gépi látásban? Egy épp futó kutatási projektet, annak eddigi eredményeit és a várható felhasználás lehetőségeit mutatja be az előadás."
     }
 ];
