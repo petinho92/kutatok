@@ -27,7 +27,6 @@
             body: JSON.stringify(formData)
         }).then(handleFetch)
             .then(res => {
-                console.log('sikeres');
                 active = true;
             })
     }
@@ -99,7 +98,7 @@
 
             <div class="is-divider is-info" data-content="Programok"></div>
             <div class="field">
-                <label class="label">Az alábbi programok érdekelnek:</label>
+                <label class="label">Az alábbi programok érdekelnek:<b class="has-text-danger">*</b></label>
             </div>
             <div class="field marginbottom">
                 {#each shows as show}
@@ -111,7 +110,7 @@
             </div>
             <div class="field">
                 <br>
-                <label class="label">Az alábbi előadások érdekelnek:</label>
+                <label class="label">Az alábbi előadások érdekelnek:<b class="has-text-danger">*</b></label>
             </div>
             <div class="field marginbottom">
                 {#each eloadas as ea}
