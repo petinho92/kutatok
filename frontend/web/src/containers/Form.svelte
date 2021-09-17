@@ -13,11 +13,16 @@
     let formData = new RegistrantsFormData();
     let privacy = false;
     let active = false;
+    let choice;
 
     function onRegister() {
-        formData.school = school;
-        formData.city = city;
-
+        if(choice === 'yes') {
+            formData.school = school;
+            formData.city = city;
+        }else{
+            formData.school =  "null";
+            formData.city = "null";
+        }
         fetch('/post/post-registration', {
             method: 'POST',
             headers: {
@@ -61,62 +66,81 @@
             </div>
 
             <div class="field">
-                <label class="label">Város<b class="has-text-danger">*</b></label>
-                <div class="control has-icons-left">
+                <label class="label">Tanulóként regisztrálok<b class="has-text-danger">*</b></label>
+                <div class="control has-icons-left has-icons-right">
                     <div class="select is-fullwidth">
-                        <select bind:value={city}>
-                            <option value="">Kérem válasszon!</option>
-                            {#each cities as city}
-                                <option value={city.name}>{city.name}</option>
-                            {/each}
+                        <select bind:value={choice}>
+                            <option value="yes">Igen</option>
+                            <option value="no">Nem</option>
                         </select>
                         <span class="icon is-small is-left">
+                            <i class="fas fa-people-arrows"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            {#if choice === 'yes'}
+                <div class="field">
+                    <label class="label">Város<b class="has-text-danger">*</b></label>
+                    <div class="control has-icons-left">
+                        <div class="select is-fullwidth">
+                            <select bind:value={city}>
+                                <option value="">Kérem válasszon!</option>
+                                {#each cities as city}
+                                    <option value={city.name}>{city.name}</option>
+                                {/each}
+                            </select>
+                            <span class="icon is-small is-left">
                             <i class="fas fa-city"></i>
                         </span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="field">
-                <label class="label">Iskola<b class="has-text-danger">*</b></label>
-                <div class="control has-icons-left">
-                    <div class="select is-fullwidth">
-                        <select bind:value={school}>
-                            <option value="">Kérem válasszon!</option>
-                            {#each schools as school}
-                                {#if school.city === city}
-                                    <option value={school.name}>{school.name}</option>
-                                {/if}
-                            {/each}
-                        </select>
-                        <span class="icon is-small is-left">
+                <div class="field">
+                    <label class="label">Iskola<b class="has-text-danger">*</b></label>
+                    <div class="control has-icons-left">
+                        <div class="select is-fullwidth">
+                            <select bind:value={school}>
+                                <option value="">Kérem válasszon!</option>
+                                {#each schools as school}
+                                    {#if school.city === city}
+                                        <option value={school.name}>{school.name}</option>
+                                    {/if}
+                                {/each}
+                            </select>
+                            <span class="icon is-small is-left">
                             <i class="fas fa-school"></i>
                         </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            {/if}
             <div class="is-divider is-info" data-content="Programok"></div>
-            <div class="field">
-                <label class="label">Az alábbi programok érdekelnek:<b class="has-text-danger">*</b></label>
+
+            <div class="field ">
+                <label class="label subtitle has-text-left-mobile">Az alábbi programok érdekelnek:<b
+                        class="has-text-danger">*</b></label>
             </div>
-            <div class="field marginbottom">
+            <div class="field is-mobile mb-6">
                 {#each shows as show}
-                    <br>
                     <label class="is-pulled-left"><input type="checkbox" bind:group={formData.programs}
                                                          value={show.id}/> {show.name}</label>
+                    <br>
                 {/each}
                 <br>
             </div>
-            <div class="field">
-                <br class="is-mobile mt-6">
-                <label class="label">Az alábbi előadások érdekelnek:<b class="has-text-danger">*</b></label>
+            <div class="field mr-auto">
+                <br class="">
+                <label class="label subtitle has-text-left-mobile card-subtitle"><br class="">Az alábbi előadások
+                    érdekelnek:<b class="has-text-danger">*</b></label>
             </div>
-            <div class="field marginbottom">
+            <div class="field">
                 {#each eloadas as ea}
-                    <br>
                     <label class="is-pulled-left"><input type="checkbox" bind:group={formData.programs}
                                                          value={ea.id}/> {ea.name}</label>
+                    <br>
                 {/each}
             </div>
             <br>
@@ -149,7 +173,8 @@
 <ModalCard bind:active={active} title="Sikeres regisztráció">
     <div class="modal-card-body">
         <p></p>
-        <p>Sok szeretettel várjuk a PTE MIK Kutatók Éjszakáján, újdonságokkal és érdekességekkel teli élménycentrikus, látványos és izgalmas kalandokra.</p>
+        <p>Sok szeretettel várjuk a PTE MIK Kutatók Éjszakáján, újdonságokkal és érdekességekkel teli élménycentrikus,
+            látványos és izgalmas kalandokra.</p>
         <p></p>
     </div>
 </ModalCard>
@@ -159,11 +184,10 @@
         background-image: linear-gradient(#feca4d, #eaa12a);
         opacity: 1;
     }
+
     .cont {
         margin-bottom: 45px;
     }
-    .marginbottom{
-        margin-bottom: 30px;
-    }
+
 
 </style>
